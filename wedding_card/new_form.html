@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./new_form.js"></script>
+    <style>
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           overflow-x: hidden;
+        }
+        .container{
+            /* height: 100vh; */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background: rgb(36, 5, 0);
+            background: linear-gradient(124deg, rgb(217, 92, 20) 0%, rgba(84,60,193,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        table {
+            border-collapse: collapse;
+            border: none;
+            outline: none;
+            /* height: 50%; */
+            /* border-spacing: 10px; */
+        }
+        table th{
+            /* padding: 1rem; */
+            outline: 0;
+          
+        }
+        table tr{
+            height: 70px;
+        }
+        th input{
+            height: 50px;
+            width: 200px;
+            border-radius: 5px;
+            background: rgb(2,0,36);
+            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,134,255,0.9136904761904762) 5%, rgba(0,212,255,1) 100%);
+            overflow: hidden;
+        }
+        .Radio input{
+            height: 15px;
+            width: 15px;
+        }
+        .tble{
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .tble th{
+            color: white;
+            font-size: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .tble .Input{
+            height: 80px;
+            width: 250px;
+            
+        }
+        .tble input{
+            height: 100%;
+            width: 100%;
+           
+        }
+        .tble input[type="text"]{
+            font-size: 1.3rem;
+        }
+        .tble input{
+            outline: none;
+            border: none;
+        }
+        textarea{
+            height: 55px;
+            width: 250px;
+            border-radius: 5px;
+            background: rgb(2,0,36);
+            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,134,255,0.9136904761904762) 5%, rgba(0,212,255,1) 100%);
+            
+        }
+        button{
+            padding: 10px 12px;
+            background-color: aqua;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        label{
+            font-size: 1rem;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form{
+            display: flex;
+    flex-direction: column;
+        }
+        @media screen and (max-width: 330px){
+            label{
+                font-size: 0.87rem;
+            }
+            .tble th{
+                font-size: 0.87rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" onsubmit="Submit(event)">
+        <table >
+            <tr>
+                <th><label for="first_name">First Name:</label></th>
+                <th><input type="text" name="" id="" onchange="First(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="last_name">Last Name:</label></th>
+                <th><input type="text" name="" id="" onchange="Last(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="dob">DOB:</label></th>
+                <th><input type="date" onchange="DOB(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="age">AGE:</label></th>
+                <th><input type="number" onchange="AGE(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="father">Father Name:</label></th>
+                <th><input type="text" onchange="FATHER(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="mother">Mother Name:</label></th>
+                <th><input type="text" onchange="MOTHER(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="Address">Address:</label></th>
+                <th><textarea name="" id="" onchange="Textarea(event)"></textarea></th>
+            </tr>
+            <tr>
+                <th><label for="gender">Gender:</label></th>
+            <th class="Radio">
+                <label for="">Male:</label>
+                <input type="radio" name="gender" value="male" onchange="Gender(event)">
+                <label for="">Female:</label>
+                <input type="radio" name="gender" value="female"  onchange="Gender(event)">
+            </th>
+            </tr>
+            <tr>
+                <th><label for="certification">Certification</label></th>
+                <th><input type="text" onchange="Certification(event)"></th>
+            </tr>
+        </table>
+        <table border="1" class="tble">
+            <tr>
+                <th>Name of Institute</th>
+                <th>Year of Passing</th>
+                <th>Percentage</th>
+            </tr>
+            <tr>
+                <th>SSC</th>
+                <th class="Input"><input type="number" onchange="Year(event)"></th>
+                <th class="Input"><input type="number" onchange="Percentage(event)"></th>
+            </tr>
+            <tr>
+                <th>Inter</th>
+                <th class="Input"><input type="number" onchange="Year1(event)"></th>
+                <th class="Input"><input type="number" onchange="Percentage1(event)"></th>
+            </tr>
+            <tr>
+                <th>Btech</th>
+                <th class="Input"><input type="number" onchange="Year2(event)"></th>
+                <th class="Input"><input type="number" onchange="Percentage2(event)"></th>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th><label for="">Skills:</label></th>
+                <th><input type="text" name="" id="" onchange="Skills(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="">Hobbies:</label></th>
+                <th><input type="text" onchange="Hobbies(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="">Profile Pic : </label></th>
+                <th class="unique"><input type="file" onchange="Profile(event)"></th>
+            </tr>
+            <tr>
+                <th><label for="">Badges:</label></th>
+                <th><textarea name="" id="" onchange="Badges(event)"></textarea></th>
+            </tr>
+            <tr>
+                <th><label for="">Description:</label></th>
+                <th><input type="text" onchange="Description(event)"></th>
+            </tr>
+            <tr class="flex">
+                <th><button>Submit</button></th>
+            </tr>
+        </table>
+    </form>
+       
+    </div>
+</body>
+</html>

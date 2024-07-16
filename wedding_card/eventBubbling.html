@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>eventBubbling</title>
+    <link rel="stylesheet" href="eventBubbling.css">
+    <script src="eventBubling.js">
+        
+    </script>
+  </head>
+  <body>
+    <div class="container">
+        <section class="childcontainer">
+            <div class="child">
+                i am a child
+            </div>
+        </section>
+    </div>
+    <script>
+        document.querySelector(".child").addEventListener("click", (e) => {
+    e.stopPropagation()
+    alert("Child Was clicked")
+})
+document.querySelector(".childcontainer").addEventListener("click",(e)=>{
+    alert("child Container was clicked")
+    e.stopPropagation();
+})
+document.querySelector(".container").addEventListener("click",(e)=>{
+    alert("container was clicked")
+})
+function getRandomColor(){
+ let val1= Math.ceil(0+Math.random()*255);
+ let val2=Math.ceil(0+Math.random()*255);
+ let val3=Math.ceil(0+Math.random()*255);
+ return`rgb(${val1},${val2},${val3})`
+}
+let a=setInterval(()=>{
+    document.querySelector(".childcontainer").style.background=getRandomColor();
+},1000);
+let b=setInterval(()=>{
+document.querySelector(".container").style.background=getRandomColor();
+},1000)
+// let a=setTimeout(() => {
+//     document.querySelector(".container").style.background=getRandomColor();
+
+// },5000)
+// let b=setTimeout(()=>{
+//     document.querySelector(".childcontainer").style.background=getRandomColor();
+// },5000)
+
+
+    </script>
+   
+  </body>
+</html>

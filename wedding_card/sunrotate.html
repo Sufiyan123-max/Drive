@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        /* justify-content: center;
+        align-items: center; */
+       flex-direction: column;
+        background-image: url('./galaxy.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        background-position: top;
+        /* background-color: rgba(0, 0, 0, 0.3); */
+        position: relative;
+
+        }
+        .upper{
+            width: 100%;
+            height: 50%;
+            background: rgb(2,0,36);
+            background: linear-gradient( rgba(78,45,226,1) 35%, rgba(0,212,255,1) 100%);
+            animation-name: animation3;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          
+            
+        }
+        .lower{
+            width: 100%;
+            height: 50%;
+            background-color: black;
+            animation-name: animation4;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        .moon{
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            background-color: gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation-name: animations;
+            animation-duration: 4s;
+            box-shadow: 0 0 5px 5px #d4cbcb;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        .sun{
+            height: 80px;
+           width: 80px;
+           background-color: yellow;
+           border-radius: 100%;
+           position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 5px 5px gold;
+            animation-name: animation;
+            
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+@keyframes animations{
+    0%{
+        transform: rotate(0deg) translate(250px);
+    }
+  
+    100%{
+        transform: rotate(360deg) translate(250px);
+    }
+}
+@keyframes animation{
+    0%{
+        transform: rotate(0deg) translate(-250px);
+    }
+ 
+    100%{
+        transform: rotate(360deg) translate(-250px);
+    }
+}
+@keyframes animation3{
+    from{
+        background: linear-gradient(to bottom right ,yellow ,blue);
+        
+    }
+    to{
+        background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+   
+    }
+}
+@keyframes animation4{
+    from{
+        background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+        
+    }
+    to{
+        background: linear-gradient(to bottom right ,yellow ,blue);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upper">
+            <div class="moon"></div>
+        </div>
+        <div class="lower">
+            <div class="sun"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

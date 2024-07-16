@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid</title>
+<link rel="stylesheet" href="nth grid.css">
+</head>
+<body>
+    <input style="color: brown;" type="number" id="gridSize" placeholder="Enter grid size">
+    <button style="color: rgb(42, 50, 165);"onclick="createGrid()">Create Grid</button>
+    <div id="buttons" style="display: none;">
+        <button onclick="move('left')">Left</button>
+        <button onclick="move('right')">Right</button>
+        <button onclick="move('up')">Up</button>
+        <button onclick="move('down')">Down</button>
+    </div>
+    <div id="gridContainer"></div>
+    <div id="message"></div>
+
+
+    <script src="nth grid.js"></script>
+</body>
+</html>

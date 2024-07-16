@@ -1,0 +1,30 @@
+.div1{
+    width:250px;
+    height: 200px;
+    border: 2sp solid black;
+    position: relative;
+    top:100px;
+    background-color: rgb(69, 158, 42);
+    z-index: -6;
+}
+.div2{
+    width: 250px;
+    height:200px;
+    border: 2sp solid black;
+    position:relative;
+    background-color: rgb(75, 75, 85);
+    bottom: 80px;
+    top: 50px;
+    left:100px;
+    z-index: -8;
+}
+.div3{
+    width: 250px;
+    height:200px;
+    border: 2sp solid black;
+    position: relative;
+    background-color: rgb(153, 172, 33);
+    left:210px;
+    bottom: 20px;
+    z-index:-9;
+}

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="./detailform.js">
+    </script>
+    <link rel="stylesheet" href="detailform.css">
+    </head>
+    <body>
+        <div class="main">
+            
+                
+            <form>
+            <div class="parent">
+                
+                <label>First Name:&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="FirstName" onchange="namefirst(event)"><br>
+                <label>Second Name:</label><input type="text"name="SecondtName" onchange="SecondName(event)"><br>
+                <label>DOB&Age:&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="date"name="DOB" onchange="age(event)"><br>
+                <label>Fathers Name:</label><input type="text"name="FatherName" onchange="fathername(event)"><br>
+                <label>Mother Name:</label><input type="text"name="MotherName" onchange="mothername(event)"><br>
+                <label> Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"name="Address" onchange="address(event)"><br>
+                <label>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="radio"name="gender"value="male" onchange="Male(event)">male
+                </label><input type="radio"name="gender"value="female"onchange="female(event)">female
+                <h1 style="color: red;">Academic Details</h1><br>
+                <table>
+                    <tr>
+                        <th>N.I</th>
+                        <th>YOP</th>
+                        <th>PER</th>
+
+                    </tr>
+                    <tr>
+                        <th>ssc</th>
+                        <th class="Input"><input type="number" name="year" onchange="{year(event)}"></th>
+                <th class="Input"><input type="number" name="Percentage" onchange="{Percentage(event)}"></th>
+                    </tr>
+                    <tr>
+                        <th>Inter</th>
+                        <th class="Input"><input type="number" name="year" onchange="{year1(event)}"></th>
+                <th class="Input"><input type="number" name="Percentage" onchange="{Percentage1(event)}"></th>
+                    </tr>
+                    <tr>
+                        <th>B.Tech</th>
+                        <th class="Input"><input type="number" name="year" onchange="{year2(event)}"></th>
+                <th class="Input"><input type="number" name="Percentage" onchange="{Percentage2(event)}"></th>
+                    </tr>
+
+                </table>
+                <label>Skills:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"name="Skills" onchange="skills(event)"><br>
+                <label>Hobbies:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"name="Hobbies" onchange="hobbies(event)"><br>
+                <label>profile pic:&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="file"name="Profilepic" onchange="{Profilepic(event)}"><br>
+            
+            </div>  <button type="reset"  style="font-size: 26px ; color: red;">submit</button>
+            </form>
+            
+            
+        </div>
+    </body>
+</html>

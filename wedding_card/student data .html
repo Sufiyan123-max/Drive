@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table with Add/Remove Rows</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        .controls {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="initialize">Initialize Table</button>
+
+<script>
+    document.getElementById('initialize').addEventListener('click', function() {
+        // Remove the initialize button
+        this.remove();
+
+        // Create input fields and buttons dynamically
+        var controlsDiv = document.createElement('div');
+        controlsDiv.className = 'controls';
+        
+        var input1 = document.createElement('input');
+        input1.type = 'text';
+        input1.id = 'cell1';
+        input1.placeholder = 'Cell 1';
+        controlsDiv.appendChild(input1);
+
+        var input2 = document.createElement('input');
+        input2.type = 'text';
+        input2.id = 'cell2';
+        input2.placeholder = 'Cell 2';
+        controlsDiv.appendChild(input2);
+
+        var input3 = document.createElement('input');
+        input3.type = 'text';
+        input3.id = 'cell3';
+        input3.placeholder = 'Cell 3';
+        controlsDiv.appendChild(input3);
+
+        var inputRowCount = document.createElement('input');
+        inputRowCount.type = 'number';
+        inputRowCount.id = 'rowCount';
+        inputRowCount.placeholder = 'Number of rows';
+        inputRowCount.min = '1';
+        controlsDiv.appendChild(inputRowCount);
+
+        var addButton = document.createElement('button');
+        addButton.textContent = 'Add Rows';
+        addButton.addEventListener('click', addRows);
+        controlsDiv.appendChild(addButton);
+
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove Last Row';
+        removeButton.addEventListener('click', removeLastRow);
+        controlsDiv.appendChild(removeButton);
+
+        document.body.appendChild(controlsDiv);
+
+        // Create the table
+        createTable();
+    });
+
+    function createTable() {
+        // Create a table element
+        var table = document.createElement('table');
+        table.setAttribute('id', 'dataTable');
+
+        // Create header row
+        var headerRow = document.createElement('tr');
+        var headers = ['Header 1', 'Header 2', 'Header 3'];
+        headers.forEach(function(headerText) {
+            var th = document.createElement('th');
+            th.appendChild(document.createTextNode(headerText));
+            headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        // Append the table to the body
+        document.body.appendChild(table);
+    }
+
+    function addRows() {
+        var cell1 = document.getElementById('cell1').value;
+        var cell2 = document.getElementById('cell2').value;
+        var cell3 = document.getElementById('cell3').value;
+        var rowCount = document.getElementById('rowCount').value;
+
+        if (cell1 && cell2 && cell3 && rowCount > 0) {
+            var table = document.getElementById('dataTable');
+            for (var i = 0; i < rowCount; i++) {
+                var newRow = table.insertRow();
+                
+                var cell1Element = newRow.insertCell(0);
+                var cell2Element = newRow.insertCell(1);
+                var cell3Element = newRow.insertCell(2);
+                
+                cell1Element.appendChild(document.createTextNode(cell1));
+                cell2Element.appendChild(document.createTextNode(cell2));
+                cell3Element.appendChild(document.createTextNode(cell3));
+            }
+
+            // Clear the input fields
+            document.getElementById('cell1').value = '';
+            document.getElementById('cell2').value = '';
+            document.getElementById('cell3').value = '';
+            document.getElementById('rowCount').value = '';
+        } else {
+            alert('Please fill all the cells and specify a valid number of rows');
+        }
+    }
+
+    function removeLastRow() {
+        var table = document.getElementById('dataTable');
+        var rowCount = table.rows.length;
+        
+        // Ensure there is at least one row (header row) to remove
+        if (rowCount > 1) {
+            table.deleteRow(rowCount - 1);
+        } else {
+            alert('No more rows to remove');
+        }
+    }
+</script>
+
+</body>
+</html>

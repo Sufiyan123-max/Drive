@@ -1,0 +1,101 @@
+.main{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid rgb(11, 10, 10); */
+    background-color: black;
+
+}
+.upper{
+    animation-name: uppers;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(84, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-left-radius: 65%;
+    border-top-right-radius: 65%; */
+    /* animation-duration: 2s; */
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+   
+}
+.lower{
+    animation-name: lower;
+    width: 100%;
+    height: 50%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.moon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(231, 229, 229);
+    box-shadow: 0 0 10px 10px white;
+    animation-name: moon;
+    animation-duration: 4s;
+    position: relative;
+    top:145px;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+.sun{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(241, 227, 29);
+    box-shadow: 0 0 10px 10px red;
+    animation-name: sun;
+    animation-duration: 4s;
+    position: relative;
+    bottom:145px;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes moon{ 
+    0% { 
+        transform: rotate(0deg)  
+              translate(200px); 
+    } 
+
+    100% { 
+        transform: rotate(360deg)  
+              translate(200px); 
+    } 
+} 
+@keyframes sun{ 
+    0% { 
+        transform: rotate(0deg)  
+              translate(-200px) ; 
+    } 
+
+    100% { 
+        transform: rotate(360deg)  
+              translate(-200px) ; 
+    } 
+} 
+
+@keyframes lower{
+   from{
+    background-color: blue;
+   }
+   to{
+    background-color: brown;
+   }
+}
+@keyframes uppers{
+    from{
+        background-color:brown ;
+    }
+   to{
+    background-color: blue;
+   }
+}

@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+
+
+    height: 100vh;
+    width: 100vw;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent{
+    
+    width: 400px;
+    height:fit-content;
+    background-color: azure;
+    position: relative;
+    border: 2px solid brown;
+    
+}
+th{
+    
+    width: 100px;
+    border: 1px solid black;
+}
+td{
+    width: 100px;
+    border: 1px solid black;
+    
+}
+th:hover{
+   background-color: rgb(153, 153, 178);
+   z-index: -100;
+}
+tr:hover{
+    color: blue;
+}
+.parent{
+    background: linear-gradient(to bottom left, blue, red);
+    border-radius: 10px;
+}

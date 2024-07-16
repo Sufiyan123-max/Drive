@@ -1,0 +1,81 @@
+.main{
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(91, 90, 90);
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.child{
+    height: 60%;
+    width: 20%;
+    border: 2px solid rgb(183, 180, 180);
+    background-color: white;
+    margin-top: 6px;
+    box-shadow: 2px 2px 10px 5px wheat;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    
+}
+.child1{
+    display:flex;
+    /* justify-content: space-around; */
+
+}
+.left{
+    width: 10px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: black;
+    margin-top: 30px;
+}
+.right{
+    height: 120px;
+    width: 400px;
+    /* border-radius: 50%; */
+    /* border: 2px solid black; */
+    background-image: url("https://images.pexels.com/photos/20728625/pexels-photo-20728625/free-photo-of-light-of-projector.jpeg?auto=compress&cs=tinysrgb&w=400");
+    background-size: 100% 100%;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bottom{
+    height: 200px;
+    width: 150px;
+    /* border: 1px solid rgb(89, 87, 82); */
+    display: flex;
+    flex-wrap: wrap;
+}
+.bottomchild{
+    height: 80px;
+    width: 100%;
+    background-color: rgb(250, 242, 242);
+    margin-right: 30px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product2{
+    background-image: url("https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?cs=srgb&dl=pexels-pixabay-325876.jpg&fm=jpg")
+        
+}
+.product3{
+    background-image: url("https://4.imimg.com/data4/UE/DH/MY-11759647/cloth-fabric-1000x1000.jpg");
+}
+.product4{
+    background-image: url("https://c8.alamy.com/comp/2BC0FCA/colourful-cotton-cloth-being-sold-in-the-india-pavilion-inside-global-village-dubai-uae-2BC0FCA.jpg");
+}
+/* .product5{
+    background-image: url("https://www.clothhouse.com/cdn/shop/files/Studio-cloth-house_1620x630.jpg?v=1638967599");
+} */

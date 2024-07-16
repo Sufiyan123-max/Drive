@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table with Add/Delete Buttons</title>
+    <style>
+        table, th, td {
+            border: 2px solid rgb(250, 66, 10);
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        .controls {
+            margin-bottom: 10px;
+        
+        
+        }
+        body{
+            /* background-color:linear-gradient:background: rgb(34,193,195); */
+            /* background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+            /* background: rgb(148,187,233); */
+background: radial-gradient(circle, rgba(148,187,233,1) 5%, rgba(238,174,202,1) 99%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+        }
+        th{
+            color: rgb(184, 27, 27);
+            scale: 1.02px;
+        
+        }
+        td{
+            color: azure;
+        }
+        th:hover{
+            scale: 1.02px;
+            background-color: blue;
+            
+        }
+        td:hover{
+            background-color: rgb(217, 214, 210);
+            
+        }
+    </style>
+</head>
+<body>
+
+<button id="initialize">Initialize Table</button>
+
+<script>
+    document.getElementById('initialize').addEventListener('click', function() {
+        // Remove the initialize button
+        this.remove();
+
+        // Create input fields and button dynamically
+        var controlsDiv = document.createElement('div');
+        controlsDiv.className = 'controls';
+        
+        var input1 = document.createElement('input');
+        input1.type = 'text';
+        input1.id = 'studentName';
+        input1.placeholder = 'Student Name';
+        controlsDiv.appendChild(input1);
+        
+
+        var input2 = document.createElement('input');
+        input2.type = 'text';
+        input2.id = 'Rollnumber';
+        input2.placeholder = 'Rollnumber';
+        controlsDiv.appendChild(input2);
+
+        var input3 = document.createElement('input');
+        input3.type = 'number';
+        input3.id = 'marks';
+        input3.placeholder = 'Marks';
+        controlsDiv.appendChild(input3);
+
+        var input4 = document.createElement('input');
+        input4.type = 'number';
+        input4.id = 'percentage';
+        input4.placeholder = 'Percentage';
+        controlsDiv.appendChild(input4);
+
+        var addButton = document.createElement('button');
+        addButton.textContent = 'Add Row';
+        addButton.addEventListener('click', addRow);
+        controlsDiv.appendChild(addButton);
+
+        document.body.appendChild(controlsDiv);
+        
+        
+
+        // Create the table
+        createTable();
+    });
+    
+    function createTable() {
+        // Create a table element
+        var table = document.createElement('table');
+        table.setAttribute('id', 'dataTable');
+
+        // Create header row
+        var headerRow = document.createElement('tr');
+        var headers = ['Student Name','Rollnumber', 'Marks', 'Percentage', 'Actions'];
+        headers.forEach(function(headerText) {
+            var th = document.createElement('th');
+            th.appendChild(document.createTextNode(headerText));
+            headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        // Append the table to the body
+        document.body.appendChild(table);
+    }
+
+    function addRow() {
+        var studentName = document.getElementById('studentName').value;
+        var Rollnumber = document.getElementById('Rollnumber').value;
+        var marks = document.getElementById('marks').value;
+        var percentage = document.getElementById('percentage').value;
+
+        if (studentName && Rollnumber && marks && percentage) {
+            var table = document.getElementById('dataTable');
+            var newRow = table.insertRow();
+            
+            var cell1Element = newRow.insertCell(0);
+            var cell2Element = newRow.insertCell(1);
+            var cell3Element = newRow.insertCell(2);
+            var cell4Element = newRow.insertCell(3);
+            var actionCell = newRow.insertCell(4);
+
+            cell1Element.appendChild(document.createTextNode(studentName));
+            cell2Element.appendChild(document.createTextNode(Rollnumber));
+            cell3Element.appendChild(document.createTextNode(marks));
+            cell4Element.appendChild(document.createTextNode(percentage + '%'));
+
+            var addButton = document.createElement('button');
+            addButton.textContent = 'Add';
+            addButton.addEventListener('click', function() {
+                addRow();
+            });
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', function() {
+                table.deleteRow(newRow.rowIndex);
+            });
+
+            actionCell.appendChild(addButton);
+            actionCell.appendChild(deleteButton);
+
+            // Clear the input fields
+            document.getElementById('studentName').value = '';
+            document.getElementById('Rollnumber').value = '';
+            document.getElementById('marks').value = '';
+            document.getElementById('percentage').value = '';
+        } else {
+            alert('Please fill all the fields');
+        }
+    }
+</script>
+
+</body>
+</html>

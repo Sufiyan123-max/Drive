@@ -1,0 +1,333 @@
+#main{
+    width: 100%;
+    height: 100svh;
+    position: relative;
+    background-color: #F8F9FE;
+    flex-wrap: wrap;
+}
+.header{
+    height: 50px;
+    width: 100%;
+    background-color:#FFFFFF;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px lightgray;
+}
+.leap{
+    height: 30px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.leap p{
+    font-size: 12px;
+}
+.details{
+    height: 450px;
+    width: 250px;
+    background-color: #FFFFFF;
+    position:absolute;
+    top: 75px;
+    left: 180px;
+    box-shadow: 0px 0px 5px lightgray;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.face{
+    width: 55px;
+    height: 66px;
+    position: absolute;
+    border: 3px solid blue;
+    background-size: 100% 100%;
+    border-radius: 100%;
+    top: 15px;
+    background-image: url(https://img.freepik.com/premium-vector/avatar-male-character-young-age-isolated-portrait-teenager-sweater-personage-photo-social-media-cv-student-high-school-university-college-friendly-guy-vector-flat_87689-2390.jpg)
+}
+.name{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 75px;
+    position: relative;
+    font-weight: 600;
+}
+.qualification{
+    color: gray; position: absolute;top: 110px; font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+    margin-top: 15px;
+}
+.area{
+    color: gray; position: absolute;top: 130px; font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+    margin-top: 15px;
+}
+.fm{
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.follow{
+    width: 30%;
+    height: 30px;
+    margin: 2px;
+    background-color: #017BFA;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message{
+    width: 30%;
+    height: 30px;
+    margin: 2px;
+    background-color:white;
+    border-radius: 5px;
+    color: #017BFA;
+    border: 1px solid #017BFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.follow p{
+    font-size: 12px;
+}
+.message p{
+    font-size: 12px;
+}
+.websiteDiv{
+    width: 80%;
+    height: 50px;
+    border-top-color: lightgray;
+    border-top-width: 2px;
+    border-top-style: solid;
+    position: absolute;
+    top: 230px;
+    display: flex;
+}
+.websiteDiv img
+{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 25px;
+    left: 5px;
+}
+.name1{
+    position: absolute;
+    top: 14px;
+    left: 30px;
+    font-size: 13px;
+}
+.name2{
+    position: absolute;
+    top: 16px;
+    left: 95px;
+    font-size: 12px;
+    color: gray;
+}
+.GithubDiv{
+    width: 80%;
+    height: 40px;
+    border-top-color: lightgray;
+    border-top-width: 2px;
+    border-top-style: solid;
+    position: absolute;
+    top: 280px;
+    display: flex;
+}
+.GithubDiv img
+{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    /* top: 25px; */ align-self: center;
+    left: 5px;
+}
+.name3{
+    position: absolute;
+    /* top: 14px; */ align-self: center;
+    left: 30px;
+    font-size: 13px;
+}
+.name4{
+    position: absolute;
+    /* top: 16px; */ align-self: center;
+    /* left: 95px; */ left: 153px;
+    font-size: 12px;
+    color: gray;
+}
+.TwitterDiv{
+    width: 80%;
+    height: 40px;
+    border-top-color: lightgray;
+    border-top-width: 2px;
+    border-top-style: solid;
+    position: absolute;
+    top: 320px;
+    display: flex;
+}
+.TwitterDiv img
+{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    /* top: 25px; */ align-self: center;
+    left: 5px;
+}
+.name5{
+    position: absolute;
+    /* top: 14px; */ align-items: center;
+    left: 30px;
+    font-size: 13px;
+}
+.name6{
+    position: absolute;
+    /* top: 16px; */ align-items: center;
+    /* left: 95px; */ left: 144px;
+    font-size: 12px;
+    color: gray;
+}
+.InstagramDiv{
+    width: 80%;
+    height: 40px;
+    border-top-color: lightgray;
+    border-top-width: 2px;
+    border-top-style: solid;
+    position: absolute;
+    top: 360px;
+    display: flex;
+}
+.InstagramDiv img
+{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    /* top: 20px; */
+    align-self: center;
+    left: 5px;
+}
+.name7{
+    position: absolute;
+    /* top: 14px; */
+    align-items: center;
+    left: 30px;
+    font-size: 13px;
+}
+.name8{
+    position: absolute;
+    /* top: 16px; */ align-items: center;
+    left: 153px;
+    font-size: 12px;
+    color: gray;
+}
+.FacebookDiv{
+    width: 80%;
+    height: 50px;
+    border-top-color: lightgray;
+    border-top-width: 2px;
+    border-top-style: solid;
+    position: absolute;
+    top: 400px;
+    display: flex;
+}
+.FacebookDiv img
+{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 12px;
+    left: 5px;
+}
+.name9{
+    position: absolute;
+    top: 1px;
+    left: 30px;
+    font-size: 13px;
+}
+.name10{
+    position: absolute;
+    top: 1px;
+    left: 95px;
+    font-size: 12px;
+    color: gray;
+}
+.inputs{
+    height: 250px;
+    width: 550px;
+    background-color: white;
+    position:absolute;
+    top: 75px;
+    left:500px;
+    box-shadow: 0px 0px 5px lightgray;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+label, input{
+    margin-top: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+input{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+}
+.progressBars{
+    height: 280px;
+    width: 550px;
+    background-color: white;
+    position:absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    top: 340px;
+    left:500px;
+    box-shadow: 0px 0px 5px lightgray;
+    /* overflow: hidden; */
+}
+.progressBars p{
+    margin-top: 6px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+progress{
+    margin-left: 30px;
+    margin-top: 1px;
+    height: 10px;
+    width: 500px;
+    color: white;
+}   
+button{
+    background-color:#007BFE;
+    width:120px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    position: absolute;
+    top: 205px;
+    left: 170px;
+}
+h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+

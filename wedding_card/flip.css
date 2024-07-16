@@ -1,0 +1,47 @@
+.root{
+    height: 300px;
+    width: 280px;
+    position: relative;
+    perspective: 500px;
+}
+.parent{
+    height: 300px;
+    width: 280px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all 1s;
+}
+.side1{
+    height: 300px;
+    width: 280px;
+    background-color: rgb(0, 1, 1);
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+}
+.side1 img{
+    height: 100%;
+    width: 100%;
+}
+.side2{
+    height: 300px;
+    width: 280px;
+    background-color: rgb(132, 207, 19);
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.side2 img{
+    height: 100%;
+    width: 100%;
+}
+.parent:hover{
+    transform: rotateY(180deg);
+}

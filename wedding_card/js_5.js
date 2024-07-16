@@ -1,0 +1,1 @@
+import{stud} from "./js_4.js"

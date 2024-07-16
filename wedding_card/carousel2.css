@@ -1,0 +1,19 @@
+body{
+    height: 700px;
+    width: 100%;
+    border: 2px solid rgb(209, 23, 23);
+    display: flex;
+    justify-content: center;
+}
+.parent{
+    height: 600px;
+    width: 500px;
+    border: 1px solid rgb(14, 103, 151);
+    display: flex;
+    justify-content: center;
+}
+.child{
+    height: 200px;
+    width: 150px;
+    border: 1px solid rgb(218, 236, 17);
+}

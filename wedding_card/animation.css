@@ -1,0 +1,43 @@
+.main{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+.earth{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: url("earth.jpg");
+    background-size: 100% 100%;
+    position: relative;
+}
+.sun{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid rgb(175, 47, 47);
+    background-color: yellow;
+    animation-name: my_animation;
+    position: absolute;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* top: 0;
+    left: 0; */
+}
+@keyframes my_animation{ 
+    0% { 
+        transform: rotate(0deg)  
+              translateY(200px) rotate(0deg); 
+    } 
+
+    100% { 
+        transform: rotate(360deg)  
+              translateY(200px) rotate(-360deg); 
+    } 
+} 

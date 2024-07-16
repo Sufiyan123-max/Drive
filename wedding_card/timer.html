@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Digitalclock</title>
+	<style>
+		body{
+			width: 100%;
+			height: 80svh;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: center;
+			background-color: black;
+		}
+		.main1
+		{
+      height: 180px;
+	  width: 350px;
+	  background-color:white;
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 10px;
+	  row-gap: 0px;
+	  border-radius: 10px;
+		}
+		.main2
+		{
+      height: 240px;
+	  width: 350px;
+	  background-color:white;
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 10px;
+	  row-gap: 0px;
+	  border-radius: 10px;
+		}
+		.head
+		{
+			font-size: 30px;
+			width: 100%;
+			/* height: 50px; */
+			font-weight: 900;
+			color: rgb(50, 49, 49);
+			text-align: center;
+		}
+		.box
+		{
+            height: 80px;
+            width: 80px;
+			background-color: white;
+			box-shadow: 0px 0px 15px 2px gray;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size:30px;
+			color: red;
+			border-radius: 10px;
+		}
+		.btn1
+		{
+              height: 50px;
+               width: 95px;
+			   background-color: white;
+			   box-shadow: 0px 0px 15px 2px gray;
+			   display: flex;
+			   align-items: center;
+			   justify-content: center;
+			   font-size:28px;
+			   color: white;
+              background-color: red;
+			   border-radius: 10px;
+			   cursor: pointer;
+		}
+
+		.colon
+		{
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main1">
+		<div class="head">REAl TIME CLOCK</div>
+		<div class=" box hour"></div>
+		<div class="colon">:</div>
+		<div class=" box minute"></div>
+		<div class="colon">:</div>
+		<div class=" box second"></div>
+	</div>	
+	<div class="main2">
+		<div class="head">Timer</div>
+		<div class=" box hour">00</div>
+		<div class="colon">:</div>
+		<div class=" box minute">00</div>
+		<div class="colon">:</div>
+		<div class=" box second">00</div>
+		<div onclick="start()" class="start btn1">Start</div>
+		<div onclick="stop()" class="stop btn1">Stop</div>
+		<div onclick="restart()" class="restart btn1">Restart</div>
+	</div>
+
+	<script>
+
+
+        // for time 
+		function fun()
+		{
+			var x=new Date();
+			document.getElementsByClassName("hour")[0].innerHTML=x.getHours();
+			document.getElementsByClassName("minute")[0].innerHTML=x.getMinutes();
+			document.getElementsByClassName("second")[0].innerHTML=x.getSeconds();
+			if(x.getSeconds()==40)
+		{
+			clearInterval(addres);
+		}
+		}
+	var addres=setInterval(fun,1000);
+
+
+            // for timer
+
+		
+  var h=0;
+  var m=0;
+  var s=0;
+  var st;
+	function funtimer()
+	{
+	if(s==61)
+	{
+		m+=1;
+		s=0;
+	}
+	if(m==61)
+	{
+		h+=1;
+		m=0;
+	}
+			document.getElementsByClassName("hour")[1].innerHTML=h;
+		
+			document.getElementsByClassName("minute")[1].innerHTML=m;
+	
+			document.getElementsByClassName("second")[1].innerHTML=s;
+
+			s+=1;
+	}
+	function start()
+	{
+	st=setInterval(funtimer,1000);
+	}
+	function stop()
+	{
+		clearInterval(st)
+	}
+	function restart()
+	{
+		clearInterval(st)
+		h=0;
+		m=0;
+		s=0;
+		funtimer();
+
+	}
+	
+
+
+	</script>
+</body>
+</html>

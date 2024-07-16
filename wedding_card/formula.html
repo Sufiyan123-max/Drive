@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script>
+// const prompt=require('prompt')
+let a=window.prompt('enter the value of a:')
+
+let c=window.prompt('enter the value of c')
+const random=Math.random()
+// functions 
+const add= (a,c)=>{
+return a+c
+}
+
+const divi= (a,c)=>{
+return a/c
+}
+
+const mul= (a,c)=>{
+return a*c
+}
+
+const power= (a,c)=>{
+return Math.pow(a,c)
+}
+const diff =(a,c)=>{
+return a-c
+}
+
+let res_1=add(a,c)
+let res_2=divi(a,c)
+let res_3=mul(a,c)
+let res_4=power(a,c)
+let res_5=diff(a,c)
+if(random<0.1){
+    console.log("addition:",res_5);
+    console.log("multiplication:",res_4);
+    console.log("difference",res_2);
+    console.log("power",res_3);
+    console.log("division",res_1);
+}
+else if(random==0 && random>90){
+    console.log("error");
+
+} 
+else{
+
+    console.log("addition:",res_1);
+    console.log("multiplication:",res_3);
+    console.log("difference",res_5);
+    console.log("power",res_4);
+    console.log("division",res_2);
+
+}
+
+
+</script>
+    </head>
+</html>

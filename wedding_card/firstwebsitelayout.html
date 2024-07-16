@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 100svh;
+        width: 100svw;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* background-color: black; */
+        /* background-color: green; */
+      }
+      .top {
+        height: 50%;
+        width: 100%;
+
+        /* background: rgb(2,0,36); */
+        background: #357990;
+        background: linear-gradient(to top right, #357990, hwb(195 58% 2%));
+        position: relative;
+        display: flex;
+        /* z-index: 1; */
+        justify-content: center;
+        align-items: center;
+      }
+      .bottom {
+        height: 50%;
+        width: 100%;
+        background-color: #81CEC6;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .header {
+        height: 12%;
+        width: 100%;
+        /* background-color: bisque; */
+        display: flex;
+        outline: none;
+        /* justify-content: center;
+            align-items: center; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* z-index: 1; */
+/* 
+        background: linear-gradient(to top right, #357990, hwb(195 58% 2%)); */
+      }
+      .left {
+        height: 100%;
+        width: 20%;
+        /* border: 1px  solid red; */
+        box-sizing: border-box;
+        display: flex;
+        column-gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .middle {
+        height: 100%;
+        width: 60%;
+        /* border: 1px solid green; */
+        box-sizing: border-box;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+      
+      }
+      ul {
+        display: flex;
+        gap: 2rem;
+       
+      }
+      ul li {
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        font-size: 1.1svw;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .right {
+        height: 100%;
+        width: 20%;
+        /* border: 1px solid purple; */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box_shadow {
+        height: 19px;
+        width: 22px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid black;
+        box-shadow: 3px 4px black;
+      }
+      .left h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.3svw;
+      }
+      .right i {
+        filter: invert(100);
+        font-size: 2.3svw;
+      }
+      .content {
+        height: 55%;
+        width: 100%;
+        /* background-color: blanchedalmond; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.5rem;
+        /* border: 1px solid green; */
+      }
+      .content_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .heading h1{
+        font-size: 3svw;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .para p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.5svw;
+      }
+      .content_2 {
+        width: 40%;
+        height: 25%;
+        background-color: white;
+        border-radius: 5rem;
+        position: relative;
+        display: flex;
+      }
+      .icon {
+        height: 100%;
+        width: 8%;
+        /* border: 1px solid red; */
+      }
+      .icon i {
+        font-size: 1.5svw;
+        position: absolute;
+        top: 30%;
+        left: 3%;
+      }
+      .input {
+        height: 100%;
+        width: 75%;
+        /* border: 1px solid green; */
+      }
+      .btn {
+        height: 100%;
+        width: 17%;
+        /* border: 1px solid rgb(128, 0, 83); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input[type="text"] {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        border: none;
+        outline: none;
+        font-size: 1.1svw;
+      }
+      /* input[type="text"]::placeholder {
+        font-size: 1.1svw;
+      } */
+      .button {
+        background-color: #1fcfcfce;
+        border: none;
+        height: 60%;
+        width: 80%;
+        cursor: pointer;
+        border-radius: 1.4rem;
+        font-size: 2.2svh;
+      }
+      .upper {
+        height: 80%;
+        width: 25%;
+        background-color: white;
+        /* z-index: 1; */
+        position: relative;
+        top: -23%;
+        border-radius: 1.2rem;
+        left: 0%;
+      }
+      .aside {
+        height: 80%;
+        width: 30%;
+        /* background-color: yellow; */
+        background-image: url("https://www.exactsales.com.br/wp-content/uploads/elementor/thumbs/post_blog_analise_concorrencia-qfidqoit7t1rpu37yutsn5fyvppgtiggxw47fupfwk.webp");
+        background-position: right;
+        background-blend-mode: overlay;
+        display: flex;
+        flex-direction: column;
+
+        /* z-index: 2; */
+        position: relative;
+        top: -23%;
+        border-radius: 1.2rem;
+        left: 2%;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      .upper_1 {
+        height: 17%;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .upper_1 h1 {
+        font-size: 1.5svw;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+      }
+      .upper_2 {
+        height: 80%;
+        width: 9%;
+        border-radius: 0.25rem;
+        background-color: #4fa6c9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      .aside_2{
+        height: 75%;
+        width: 9%;
+        border-radius: 0.25rem;
+        background-color: hsl(206, 93%, 43%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      .uppers {
+        width: 90%;
+        margin: auto;
+        height: 26%;
+        /* background-color: aliceblue; */
+        display: flex;
+        /* position: relative; */
+        justify-content: center;
+      }
+      .paras p {
+        font-size: 1svw;
+        /* background-color: bisque; */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .parass p {
+        font-size: 1svw;
+        /* background-color: bisque; */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #efe9e9e2;
+        font-weight: 400;
+      }
+      .bgs {
+        width: 100%;
+
+        height: 57%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bgimgs {
+        background-image: url("remote.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 95%;
+        width: 60%;
+      }
+      .aside_1 {
+        height: 18%;
+        width: 88%;
+        margin: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .data{
+        height: 45%;
+        width: 88%;
+        margin: auto;
+        /* border: 1px solid red; */
+        position: relative;
+      }
+      .bts{
+        background-color: #1fcfcfce;
+        border: none;
+        height: 25%;
+        width: 25%;
+        border-radius: 1.4rem;
+        font-size: 2.2svh;
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+      }
+      .footer{
+        height: 20%;
+        width: 88%;
+        margin: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* position: absolute; */
+        
+      }
+      .footer_left{
+        display: flex;
+        column-gap: 1rem;
+      }
+      .iconic i{
+        font-size: 3.5svh;
+        cursor: pointer;
+        /* border-radius: 100%; */
+      }
+      .footer_right img{
+        color: #84CEC4;;
+      }
+      .sidebar{
+        height: 100%;
+        width: -webkit-fill-available;
+        /* background-color: red; */
+        z-index:-1;
+        background-color: rgba(255, 255, 255, 0.3);
+        position:fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+      }
+      .right_sidebar{
+        height: 20%;
+        width: 100%;
+        /* border: 1px solid purple; */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+       align-items: center;
+      }
+      .right_sidebar i{
+        font-size: 4rem;
+      }
+      .middle_sidebar {
+        height: 80%;
+        width: 100%;
+        /* border: 1px solid green; */
+        box-sizing: border-box;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+       
+      }
+      .middle_sidebar ul {
+        display: flex;
+        flex-direction: column;
+     
+      }
+      .middle_sidebar ul li {
+        text-decoration: none;
+        list-style: none;
+        font-size: 3svw;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .sidebar_icon{
+        position: absolute;
+    top: 2%;
+    left: 6%;
+      }
+      .sidebar_icon i{
+        font-size: 2rem;
+      }
+      .hamsburger i{
+        font-size: 1rem;
+        mix-blend-mode: multiply;
+      }
+      .hamsburger{
+        position: fixed;
+    top: 3px;
+    right: 9px;
+        /* display: block; */
+      }
+      @media screen and (max-width: 500px){
+        .middle{
+        
+          /* top: -100%; */
+          display: none;
+          
+        }
+        .right{
+          display: none;
+        }
+        .left h2{
+          font-size: 2.5svw;
+        }
+        .header{
+          height: 14%;
+        }
+        .button h3{
+        font-size: 1.3svw;
+      }
+      .icon i{
+        top: 43%;
+      } 
+       
+      }
+      @media screen and (min-width: 500px){
+       .hamsburger{
+        display: none;
+       }
+      }
+      .button h3{
+        font-size: 1svw;
+      }
+      .button:hover{
+        box-shadow: 0 0 5px 3px #76cbec;
+      }
+      @media screen and (min-width: 1050px){
+        .content{
+          height: 73%;
+        }
+        .upper{
+          top: -20%;
+        }
+        .aside{
+          top: -20%;
+        }
+      }
+      ul li:hover{
+        box-shadow: 0 0 3px 3px hwb(197 0% 20%);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <button class="sidebar_icon" onclick=closebutton()><i class="fa-solid fa-xmark"></i></button>
+        <div class="right_sidebar">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="middle_sidebar">
+          <ul>
+            <li style="color: black">HOME</li>
+            <li style="color: white">BROWSE TOPICS</li>
+            <li style="color: white">HOW IT WORKS</li>
+            <li style="color: white">FAQ</li>
+            <li style="color: white">CONTACT</li>
+            <li style="color: white">PAGES</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="top">
+        <div class="header">
+          <div class="left">
+            <div class="box_shadow"></div>
+            <h2>Topic</h2>
+          </div>
+          <!-- <button class="hamsburger" onclick=showsidebar()><i class="fa-solid fa-bars"></i></button> -->
+          <div class="middle">
+            <ul>
+              <li style="color: black">HOME</li>
+            <li style="color: white">BROWSE TOPICS</li>
+            <li style="color: white">HOW IT WORKS</li>
+            <li style="color: white">FAQ</li>
+            <li style="color: white">CONTACT</li>
+            <li style="color: white">PAGES</li>
+            </ul>
+          </div>
+          <div class="right">
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content_1">
+            <div class="heading"><h1>Discover. Learn. Enjoy</h1></div>
+            <div class="para">
+              <p>platform for creatives around the world</p>
+            </div>
+          </div>
+          <div class="content_2">
+            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="input">
+              <input
+                type="text"
+                placeholder="Design, Code, Marketing, Finance ..."
+              />
+            </div>
+            <div class="btn"><button class="button"><h3>Search</h3></button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="flex">
+          <div class="upper">
+            <div class="upper_1">
+              <div><h1>Web Design</h1></div>
+              <div class="upper_2">
+                <h2 style="font-size: 1.5svw">14</h2>
+              </div>
+            </div>
+            <div class="uppers">
+              <div class="paras">
+                <p>
+                  When you search for free CSS templates, you will notice that
+                  TemplateMo is one of the best websites.
+                </p>
+              </div>
+            </div>
+            <div class="bgs">
+              <div class="bgimgs"></div>
+            </div>
+          </div>
+
+          <div class="aside">
+            <div class="aside_1">
+              <div>
+                <h1
+                  style="
+                    color: #efe9e9e2;
+                    font-size: 1.5svw;
+                    font-weight: 600;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  "
+                >
+                  Finance
+                </h1>
+              </div>
+              <div class="aside_2">
+                <h2 style="font-size: 1.5svw">25</h2>
+              </div>
+            </div>
+            <div class="data">
+                <div class="parass"><p>Topic Listing Template includes homepage, listing page ,detail page,and contact page. You can feel free to edit and adapt for your requirements.</p></div>
+                
+                    <button class="bts"><h2 style=" color: #efe9e9e2; font-size: 1svw; font-weight: 400;">Learn More</h2></button>
+               
+            </div>
+            <div class="footer">
+                <div class="footer_left">
+                    <div><h2 style=" color: #efe9e9e2; font-size: 1.5svw;">Share:</h2></div>
+                    <div class="iconic"><i class="fa-brands fa-square-twitter" style="color: #84CEC4; font-size: 2svw;"></i></div>
+                    <div class="iconic"><i class="fa-brands fa-square-facebook" style="color: #84CEC4; font-size: 2svw;"></i></div>
+                    <div class="iconic"><i class="fa-brands fa-square-pinterest" style="color: #84CEC4; font-size: 2svw;"></i></div>
+                </div>
+                <div class="footer_right" >
+                    <img src="./tags.svg"  alt="" >
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showsidebar() {
+       let sidebar= document.querySelector(".sidebar");
+       sidebar.style.zIndex=1;
+       console.log('clicked');
+       
+      }
+      function closebutton(){
+        let sidebar=document.querySelector(".sidebar");
+        sidebar.style.zIndex=0;
+      }
+    </script>
+  </body>
+</html>
